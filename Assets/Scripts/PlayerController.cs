@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,12 +23,16 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isFacingRight = true;
     public GameObject heartPrefab;
+    private LifeSystem lifeSystem;
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        lifeSystem = GameObject.Find("LifeSystem").GetComponent<LifeSystem>();
+
     }
 
     // Physics
@@ -84,6 +89,11 @@ public class PlayerController : MonoBehaviour
             GameObject heart = Instantiate(heartPrefab, this.transform.position, Quaternion.identity);
             heart.transform.position = new Vector3(3.55f, 10.00f, 0f);
             heart.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        }
+
+        if(other.gameObject.CompareTag("Heart"))
+        {
+            lifeSystem.ResetLife();
         }
     }
 
