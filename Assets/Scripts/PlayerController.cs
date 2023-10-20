@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private bool isGrounded = false;
     private bool isFacingRight = true;
+    public GameObject heartPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -73,4 +74,18 @@ public class PlayerController : MonoBehaviour
 
         isFacingRight = !isFacingRight;
     }
+
+    //if "LuckyBox" is destroyed, then an obejct with name "heart" is created
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("BreakBox"))
+        {
+            Debug.Log("Heart ");
+            GameObject heart = Instantiate(heartPrefab, this.transform.position, Quaternion.identity);
+            heart.transform.position = new Vector3(3.55f, 10.00f, 0f);
+            heart.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        }
+    }
+
+
 }
