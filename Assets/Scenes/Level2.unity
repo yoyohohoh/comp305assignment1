@@ -9785,11 +9785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2887879259082897422, guid: c7c4e0cd666738b4ea509b5fc15d50e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.734488
+      value: -1.4778419
       objectReference: {fileID: 0}
     - target: {fileID: 2887879259082897422, guid: c7c4e0cd666738b4ea509b5fc15d50e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8912461
+      value: -0.884516
       objectReference: {fileID: 0}
     - target: {fileID: 2887879259082897649, guid: c7c4e0cd666738b4ea509b5fc15d50e0, type: 3}
       propertyPath: orthographic size
@@ -9880,14 +9880,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2742325361939099479, guid: 6122223288a720545bea4e359775c0a1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: baa0c643131554ff99574059ec7da1cc, type: 3}
-    - target: {fileID: 2742325361939099479, guid: 6122223288a720545bea4e359775c0a1, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3957186190757759015, guid: 6122223288a720545bea4e359775c0a1, type: 3}
       propertyPath: m_RootOrder
       value: 5

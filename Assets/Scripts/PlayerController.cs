@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private bool isGrounded = false;
     private bool isFacingRight = true;
+    private bool isCrouched = false;
     public GameObject heartPrefab;
     private LifeSystem lifeSystem;
 
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
             rBody.AddForce(new Vector2(0.0f, jumpForce));
             isGrounded = false;
         }
+        
 
         rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
 
@@ -61,7 +63,16 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
         anim.SetBool("isGrounded", isGrounded);
+        
         //Debug.Log(rBody.velocity.y);
+    }
+
+    private void Update()
+    {
+        Crouch();
+        {
+            anim.SetBool("isCrouched", isCrouched);
+        }
     }
 
     private bool GroundCheck()
@@ -95,6 +106,22 @@ public class PlayerController : MonoBehaviour
         {
             lifeSystem.ResetLife();
         }
+    }
+
+    void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            isCrouched = true;
+            Debug.Log("Crouching = " + isCrouched);
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            isCrouched = false;
+            Debug.Log("Crouching = " + isCrouched);
+        }
+
+
     }
 
 
