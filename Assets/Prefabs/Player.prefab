@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1279300081262885202}
   - component: {fileID: 1279300081262885201}
   - component: {fileID: 1279300081262885200}
-  - component: {fileID: 1279300081262885199}
   - component: {fileID: 1279300081262885203}
   - component: {fileID: 1779923945906823544}
+  - component: {fileID: 647277823030497535}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -110,22 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &1279300081262885199
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279300081262885198}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.010083199, y: -0.04860834}
-  m_Size: {x: 0.20716906, y: 0.2988859}
-  m_Direction: 0
 --- !u!114 &1279300081262885203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 800
-  groundCheckRadius: 0.1
+  jumpForce: 100
+  groundCheckRadius: 1
   groundCheckPos: {fileID: 1279300081315923754}
   whatIsGround:
     serializedVersion: 2
@@ -165,6 +149,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &647277823030497535
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279300081262885198}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.33, y: 0.32}
+    newSize: {x: 0.33, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.06532927, y: 0.07078689}
+      - {x: -0.073630586, y: 0.06635671}
+      - {x: -0.10339813, y: 0.05160187}
+      - {x: -0.11135672, y: -0.055976253}
+      - {x: -0.10016747, y: -0.121979974}
+      - {x: -0.0965765, y: -0.13658918}
+      - {x: -0.08878081, y: -0.16266973}
+      - {x: -0.031269785, y: -0.16455045}
+      - {x: -0.0031955594, y: -0.16208465}
+      - {x: 0.07457833, y: -0.16288315}
+      - {x: 0.09245254, y: -0.117877595}
+      - {x: 0.091593705, y: -0.09338688}
+      - {x: 0.08817835, y: -0.027930703}
+      - {x: 0.08725036, y: 0.04299327}
+      - {x: 0.0699873, y: 0.069767535}
 --- !u!1 &1279300081315923753
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279300081315923753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1618, z: 0}
+  m_LocalPosition: {x: -0.017, y: -0.067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
